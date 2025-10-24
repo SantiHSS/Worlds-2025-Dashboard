@@ -1,103 +1,174 @@
-import Image from "next/image";
+import DashboardLayout from "@/components/DashboardLayout";
+import AppImage from "@/components/AppImage";
+import {
+  Boxes,
+  Swords,
+  Crown,
+  CalendarDays,
+  Medal,
+  Trophy,
+} from "lucide-react";
+
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <DashboardLayout>
+      <div className="space-y-6">
+        {/* Main- Dashboard */}
+        <div className="bg-linear-to-br from-slate-800 to-slate-900 rounded-xl shadow-2xl p-6 border border-cyan-400/20 relative overflow-hidden">
+          <div className="relative z-10">
+            <div className="flex items-center mb-4">
+             <AppImage icon="logo" size={100} />
+              <div className="ml-6">
+                <h1 className="text-3xl font-bold text-white">
+                  League of Legends World Championship 2025
+                </h1>
+                <p className="text-cyan-300 text-lg">
+                  Follow the action, check stats, and explore all the teams
+                  competing this year!
+                </p>
+              </div>
+            </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            {/* Info */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+              <div className="bg-cyan-500/20 border border-cyan-500/30 rounded-xl shadow-md p-6">
+                <p className="text-sm font-medium text-cyan-300">
+                  Participating Teams
+                </p>
+                <p className="text-3xl font-bold text-white">16</p>
+                <p className="text-xs text-cyan-400">From all regions</p>
+              </div>
+
+              <div className="bg-emerald-500/20 border border-emerald-500/30 rounded-xl shadow-md p-6">
+                <p className="text-sm font-medium text-emerald-300">
+                  Total Matches
+                </p>
+                <p className="text-3xl font-bold text-white">60 - 90</p>
+                <p className="text-xs  text-emerald-400">Group + Knockouts</p>
+              </div>
+
+              <div className="bg-purple-500/10 border border-purple-500/30 rounded-xl shadow-md p-6">
+                <p className="text-sm font-medium text-purple-300">Viewers</p>
+                <p className="text-3xl font-bold text-white">50M</p>
+                <p className="text-xs text-purple-400">Peak audience</p>
+              </div>
+
+              <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl shadow-md p-6">
+                <p className="text-sm font-medium text-amber-300">
+                  Total Champions
+                </p>
+                <p className="text-3xl font-bold text-white">170</p>
+                <p className="text-xs text-amber-400">Ready for battle</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        {/* Tournament Info Box */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Tournament Schedule Box 1 */}
+          <div className="bg-linear-to-br from-slate-800 to-slate-900 rounded-xl shadow-2xl p-6 border border-cyan-400/20">
+            <h3 className="text-xl font-bold text-white mb-6 flex items-center">
+              <span className="mr-3">
+                <CalendarDays />
+              </span>
+              Tournament Schedule
+            </h3>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-4 rounded-lg bg-cyan-500/10 border border-cyan-500/30">
+                <div>
+                  <p className="font-bold text-white">Group Stage</p>
+                  <p className="text-sm text-cyan-300/80">
+                    Oct 15 - Oct 25, 2025
+                  </p>
+                </div>
+                <span className="text-cyan-400 text-2xl">
+                  <Boxes />
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/30">
+                <div>
+                  <p className="font-bold text-white">Knockout Stage</p>
+                  <p className="text-sm text-emerald-300/80">
+                    Oct 28 - Nov 5, 2025
+                  </p>
+                </div>
+                <span className="text-emerald-400 text-2xl">
+                  <Swords />
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between p-4 rounded-lg bg-purple-500/10 border border-purple-500/30">
+                <div>
+                  <p className="font-bold text-white">Grand Finals</p>
+                  <p className="text-sm text-purple-300/80">Nov 10, 2025</p>
+                </div>
+                <span className="text-purple-400 text-2xl">
+                  <Crown />
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Top Teams Box 2 */}
+          <div className="bg-linear-to-br from-slate-800 to-slate-900 rounded-xl shadow-2xl p-6 border border-cyan-400/20">
+            <h3 className="text-xl font-bold text-white mb-6 flex items-center">
+              <span className="mr-3">
+                <Trophy />
+              </span>
+              Top Contenders
+            </h3>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-4 rounded-lg bg-amber-500/10 border border-amber-500/30">
+                <div className="flex items-center space-x-3">
+                  <span className="text-2xl text-amber-300/80">
+                    <Medal />
+                  </span>
+                  <div>
+                    <p className="font-bold text-white">T1 (LCK)</p>
+                    <p className="text-sm text-amber-300/80">
+                      Defending Champions
+                    </p>
+                  </div>
+                </div>
+                <span className="text-amber-400"></span>
+              </div>
+
+              <div className="flex items-center justify-between p-4 rounded-lg bg-blue-500/10 border border-blue-500/30">
+                <div className="flex items-center space-x-3">
+                  <span className="text-2xl text-blue-300/80">
+                    <Medal />
+                  </span>
+                  <div>
+                    <p className="font-bold text-white">
+                      Bilibili Gaming (LPL)
+                    </p>
+                    <p className="text-sm text-blue-300/80">2024 Finalists</p>
+                  </div>
+                </div>
+                <span className="text-blue-400"></span>
+              </div>
+
+              <div className="flex items-center justify-between p-4 rounded-lg bg-green-500/10 border border-green-500/30">
+                <div className="flex items-center space-x-3">
+                  <span className="text-2xl text-green-300/80">
+                    <Medal />
+                  </span>
+                  <div>
+                    <p className="font-bold text-white">G2 Esports (LEC)</p>
+                    <p className="text-sm text-green-300/80">
+                      European Powerhouse
+                    </p>
+                  </div>
+                </div>
+                <span className="text-green-400"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </DashboardLayout>
   );
 }
